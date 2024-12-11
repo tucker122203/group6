@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFR Homepage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; 
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Add a pseudo-element for the blurred background */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://scontent.fmnl8-2.fna.fbcdn.net/v/t39.30808-6/469414474_1625428201687969_7387669868380004522_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHLRNZdpfJuBPhy5hrqNpzk7bpEYDVBim3tukRgNUGKbQmmSEXONBHQzDd93Gbn4qA_12LIoj36CmnWaxvwPV_n&_nc_ohc=twrNDLvcmAIQ7kNvgHcJ_2B&_nc_zt=23&_nc_ht=scontent.fmnl8-2.fna&_nc_gid=AwsU72uGzys9896PPrUIIf4&oh=00_AYC9awTlecJ0k1BFOvRl7ZP_3uhl65k2_x4pMW46sFmcSg&oe=675EFCB6');
+            background-size: cover; 
+            background-position: center center; 
+            background-repeat: no-repeat; 
+            filter: blur(5px); /* Adjust the blur intensity here */
+            z-index: -1; /* Place it behind the content */
+        }
+
+        .changing-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .sidebar {
+            width: 350px;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            padding-top: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .sidebar img {
+            width: 200px;
+            height: 200px;
+            border: 1px solid white;
+            border-radius: 100%;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            background-color: #686C69;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #7C77AB;
+        }
+
+        button:active {
+            background-color: #7C77AB;
+        }
+
+        /* New CSS for positioning nav buttons */
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #7C77AB;
+        }
+
+        /* Lock the "Additional Features" link */
+        .locked {
+            pointer-events: none; /* Prevent clicking */
+            color: gray; /* Change color to indicate it's locked */
+        }
+
+        .additional-features-message {
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Changing text section -->
+    <div class="changing-text" id="changingText">Welcome to SFR!</div>
+
+    <div class="container">
+        <div class="sidebar">
+            <img src="https://scontent.fmnl8-6.fna.fbcdn.net/v/t39.30808-6/468294723_1310728080347425_5367972558997775274_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFyDmE2HCxgZMQUnliNIi-o1KkS4_jylrPUqRLj-PKWs6ujER3lsofnDmdifth2I20qtYcEOBAwOFSt4cXvXtVM&_nc_ohc=7_v-qkuotWEQ7kNvgGfwhsZ&_nc_zt=23&_nc_ht=scontent.fmnl8-6.fna&_nc_gid=A3MO-_iHdnBHAtyPGS3d2ml&oh=00_AYDWCPfSBZgJiMj0A6vo_GaLnynMp8lhaBlh3qEF5Gbyfg&oe=675EF7AA"> <br> <br> <br>
+            <h2>Welcome to SFR!</h2>
+            <a href="LoginPage.html"><button> Login</button></a>
+        </div>
+        <nav>
+            
+            <a href="AboutUs.html">About</a>&nbsp;
+            <a href="location.html"class="locked">Services</a>&nbsp;
+            <a href="ayokonaaa.html" class="locked">Additional Features</a>
+            <div class="additional-features-message">Login to access </div>
+        </nav>
+    </div>
+    <div>
+        
+
+    <!-- Footer section -->
+    <div class="footer">
+        © 2024 SFR Portal. All rights reserved.
+    </div>
+
+    <script>
+        const texts = [
+            "Welcome to SFR!",
+            "Have a Smooth flow Regals!",
+            "Stay connected with us for more updates!",
+            "Thank you for visiting!"
+        ];
+
+        const textElement = document.getElementById('changingText');
+        let index = 0;
+
+        function updateText() {
+            textElement.style.opacity = 0;
+            setTimeout(() => {
+                index = (index + 1) % texts.length;
+                textElement.textContent = texts[index];
+                textElement.style.opacity = 1;
+            }, 1000);
+        }
+
+        setInterval(updateText, 5000);
+    </script>
+</body>
+</html>
